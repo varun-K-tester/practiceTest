@@ -43,7 +43,7 @@ import cucumber.api.java.en.Then
 import cucumber.api.java.en.When
 
 class Practice_login {
-	@Given ("User is navigated to login page")
+	@Given("User is navigated to login page")
 	def naviagtedToLoginPage(){
 		println("/nUser is navigated to login page")
 		WebUI.openBrowser('')

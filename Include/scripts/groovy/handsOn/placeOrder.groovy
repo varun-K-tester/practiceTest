@@ -1,12 +1,6 @@
 package handsOn
-import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
-import org.openqa.selenium.By
-import org.openqa.selenium.WebDriver
-import org.openqa.selenium.WebElement
-
-import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import cucumber.api.java.en.And
@@ -17,11 +11,6 @@ import internal.GlobalVariable
 
 
 
-import cucumber.api.java.en.And
-import cucumber.api.java.en.Given
-import cucumber.api.java.en.Then
-import cucumber.api.java.en.When
-import internal.GlobalVariable
 
 
 class placeOrder {
@@ -51,12 +40,24 @@ class placeOrder {
 	@Then("Users places order")
 	def placeorder() {
 		WebUI.waitForPageLoad(10)
-		String subTotal1 = WebUI.getText(findTestOject('Object Repository/HandsOn/placeOrder/subtotal'))
-		int subTotal = subTotal1.toInteger()
+
+		String subTotal1 = WebUI.getText(findTestObject('Object Repository/testts/Page_Caseys/span_126.30'))
 		println subTotal1
-		println subTotal
+		String subTotal2 = subTotal1.substring(0, subTotal1.lastIndexOf("."))
+		//		for(int i = 1;i < subTotal1.size() ;i++) {
+		//			if (subTotal1[i].equals('.')) {
+		//				break;
+		//			}
+		//			else {
+		//				int n=0
+		//				subTotal2[n] = subTotal1[i]
+		//				n++
+		//			}
+		//		}
+		println subTotal2
+		int subTotal= subTotal2.toInteger()
 		if(subTotal >10) {
-			WebUI.sendKeys(findTestObject('Object Repository/HandsOn/placeOrder/cvv'), 123)
+			WebUI.sendKeys(findTestObject('Object Repository/HandsOn/placeOrder/cvv'), '123')
 			WebUI.click(findTestObject('Object Repository/HandsOn/placeOrder/Place pickup order BTN'))
 		}
 		else {
