@@ -1,4 +1,5 @@
 	package handsOn
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
 import org.openqa.selenium.Keys
@@ -26,7 +27,10 @@ class addToCart {
 		}
 		else {
 			WebUI.click(findTestObject('Object Repository/HandsOn/addtocart/Pickup_occasion'))
-			WebUI.sendKeys(findTestObject('Object Repository/HandsOn/addtocart/Address_TextBar'),location)
+			//WebUI.sendKeys(findTestObject('Object Repository/HandsOn/addtocart/Address_TextBar'),location)
+			String location1 = findTestData('Data Files/StoreAddress').getValue(2,3)
+			WebUI.sendKeys(findTestObject('Object Repository/HandsOn/addtocart/Address_TextBar'),location1)
+			
 			WebUI.sendKeys(findTestObject('Object Repository/HandsOn/addtocart/Address_TextBar'), Keys.chord(Keys.ARROW_DOWN, Keys.ENTER))
 
 			switch(date) {

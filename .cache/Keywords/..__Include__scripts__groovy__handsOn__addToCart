@@ -1,10 +1,10 @@
 {
-  "keywordFileContentHash": "9CED72BC05B7A25EC692A74CBB3EB71E",
+  "keywordFileContentHash": "E43CF075F0DF0677C3B9AAC845ADFAE0",
   "keywordClasses": [
     {
       "name": "handsOn.addToCart",
       "keywordMethods": []
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }
