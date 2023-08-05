@@ -1,10 +1,10 @@
 {
-  "keywordFileContentHash": "ED09F062BD56D543C40B283AC404C14E",
+  "keywordFileContentHash": "209CFFABA5E3A2A3C4583C04F19708D7",
   "keywordClasses": [
     {
       "name": "handsOn.placeOrder",
       "keywordMethods": []
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

@@ -8,10 +8,32 @@ import cucumber.api.java.en.Given
 import cucumber.api.java.en.Then
 import cucumber.api.java.en.When
 import internal.GlobalVariable
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import com.kms.katalon.core.annotation.Keyword
+import com.kms.katalon.core.checkpoint.Checkpoint
+import com.kms.katalon.core.checkpoint.CheckpointFactory
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords
+import com.kms.katalon.core.model.FailureHandling
+import com.kms.katalon.core.testcase.TestCase
+import com.kms.katalon.core.testcase.TestCaseFactory
+import com.kms.katalon.core.testdata.TestData
+import com.kms.katalon.core.testdata.TestDataFactory
+import com.kms.katalon.core.testobject.ObjectRepository
+import com.kms.katalon.core.testobject.TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
-
-
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 class placeOrder {
 
@@ -56,7 +78,7 @@ class placeOrder {
 		//		}
 		println subTotal2
 		int subTotal= subTotal2.toInteger()
-		if(subTotal >10) {
+		if(subTotal >15) {
 			WebUI.sendKeys(findTestObject('Object Repository/HandsOn/placeOrder/cvv'), '123')
 			WebUI.click(findTestObject('Object Repository/HandsOn/placeOrder/Place pickup order BTN'))
 		}

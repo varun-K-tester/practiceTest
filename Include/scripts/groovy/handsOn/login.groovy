@@ -1,4 +1,5 @@
 package handsOn
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
@@ -16,17 +17,20 @@ class login {
 		WebUI.waitForPageLoad(10)
 		WebUI.verifyElementPresent(findTestObject('Object Repository/HandsOn/Login/Sign in Header'),5)
 	}
-	@When("User enters username(.*)")
-	def username(String usernames) {
+	@When("User enters username (\\d+)")
+	def username(int rowNum) {
 		WebUI.verifyElementPresent(findTestObject('Object Repository/HandsOn/Login/Email'), 5)
 		WebUI.click(findTestObject('Object Repository/HandsOn/Login/Email'))
-		WebUI.sendKeys(findTestObject('Object Repository/HandsOn/Login/Email'),usernames )
+		String username = findTestData('Data Files/Login_cred').getValue(1,rowNum)
+		WebUI.sendKeys(findTestObject('Object Repository/HandsOn/Login/Email'),username)
+		
 	}
-	@And("User enters password(.*)")
-	def password(String passwords) {
+	@And("User enters password (\\d+)")
+	def password(int rowNum) {
 		WebUI.verifyElementPresent(findTestObject('Object Repository/HandsOn/Login/password'),5)
 		WebUI.click(findTestObject('Object Repository/HandsOn/Login/password'))
-		WebUI.setEncryptedText(findTestObject('Object Repository/HandsOn/Login/password'), passwords)
+		String password = findTestData('Data Files/Login_cred').getValue(2,rowNum)
+		WebUI.setEncryptedText(findTestObject('Object Repository/HandsOn/Login/password'), password)
 	}
 	@Then("User is succesfully logged in")
 	def loggedIn(){

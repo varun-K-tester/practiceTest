@@ -7,5 +7,5 @@ Feature: Adding product to cart
     Then User clicks on add to cart button
 
     Examples: 
-      | location | date     | quantity |
-      | linton   | tomorrow |        5 |
+      | location | date        | quantity |
+      | linton   | later_today |        1 |

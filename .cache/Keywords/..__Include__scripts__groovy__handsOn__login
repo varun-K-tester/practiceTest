@@ -1,10 +1,10 @@
 {
-  "keywordFileContentHash": "CB801B78BADA69F4C073EDB0684B2CC3",
+  "keywordFileContentHash": "CB967E2586F9528D83C1630A43C0BB82",
   "keywordClasses": [
     {
       "name": "handsOn.login",
       "keywordMethods": []
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }
